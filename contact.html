@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Minisite 2018 : page contact</title>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" type="text/css" href="css/position.css"/>
+
+<!-- afin que la CSS de DECORATION prévale sur la CSS de positionnement, 
+    je la place en DERNIER dans mon code -->
+
+        <link rel="stylesheet" type="text/css" href="css/minisiteDeco-etu.css"/>
+        
+    </head>
+
+
+    <body>
+
+        <header id= "logo" class="headPrincipal container-1  container-md-6 container-lg-3  header">
+            
+            
+            <h1 class= "logo lg-3 -item-double " id="info-logo">
+                <span  class="dis-none" >vintage lab logo page catalogue</span>  
+                <a href="index.html">
+                    <img src="img/logoVint.jpg" alt="logo société vintage lab " />
+                </a>
+            </h1>
+            
+            
+            <form class= "form push" name="inscription" method="post" action="destination.php">
+              
+                    <input type="search" name="recherche"   placeholder="Que cherchez-vous">
+                
+                    <input type="submit" name="button" id="button" value="OK">
+             
+            </form>
+        </header>
+
+        <hr />
+
+                
+
+     <!-- GROUPE 2 La nav -->
+        <!-- en vue intermédiaire (tablette) les élémts se positionnent 3 par 3 donc container-md-3 -->
+        <nav class=" nav-principal container-lg-2 container-md-3 dis-none">
+            <ul class=" nav-menu vert">
+                    <li><h2><a href="index.html">accueil</a></h2></li>
+                    <li><h2><a href="#">meubles</a></h2></li>
+                    <li><h2><a href="#">luminaires</a></h2></li>
+                    <li><h2><a href="#">accessoires</a></h2></li>
+                    <li><h2><a href="contact.html">contact</a></h2></li>
+            </ul>
+                
+        </nav>
+        
+     <!-- Fil d'Ariane -->
+        <section>
+                   
+            <ul class="ariane ">
+                <li>vous êtes ici : </li>
+                    
+                <li><a href="contact.html"> &nbsp;CONTACT </a></li>
+                    
+            </ul>        
+                   
+        </section>
+       
+      <!-- Corps du site --> 
+        <section class="plan contenu container-lg-1 vert">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10120.85335412887!2d5.554299717003033!3d50.64172893792035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0fa164d5c4969%3A0xd379a00de93c696!2sRue+St+Laurent+33%2C+4000+Li%C3%A8ge!5e0!3m2!1sfr!2sbe!4v1528832800927" width="600" height="450" style="border:0" allowfullscreen></iframe>
+        </section>
+
+        <section class="global-contact contenu container-lg-3 vert">
+
+            <div class="infos lg-item-simple jaune">
+                <p>klyhjkyu</p>
+            </div>
+
+            <div class="formulaire lg-item-double gris">
+                <h3>Contactez-nous ! </h3>
+
+
+                <form class= "renseignement container-lg-2" name="inscription" method="post" action="destination.php">
+                    <div class="lg-item-simple">
+                        <p>
+                            <label for="nom">Nom : </label>
+                        <input type="text" name="nom" id="nom"  autofocus >
+                        </p>
+                        <p>
+                            <label for="prenom">Prénom</label>
+                        <input type="text" name="prenom" id="prenom">
+                        </p>
+
+                        <p>
+                            <label for="email">E-mail : </label>
+                        <input type="email" name="email" id="email" >
+                        </p>
+                        <p>
+                            <label for="newsleter" >je désire recevoir la newsletter</label>
+                            <input style="float: left;" type="checkbox" name="newsleter" id="newsleter" value="Souhaite s'inscrire à la leter" />
+                        </p>
+                        <p>
+                            <input type="submit" name="contact" id="contact" value="ENVOYER">
+                        </p>
+                    </div>
+                    <div class="lg-item-simple">
+                        <textarea name="commentaire" id="commentaire" rows="10" cols="50">Un commentaire</textarea> 
+                    </div>
+                </form>
+                
+            </div>
+
+        </section>
+
+    </body>
+</html>    

@@ -1,0 +1,304 @@
+/* Je vais SEPARER la décoration du POSITIONNEMENT  */
+
+body{
+	margin: 2%;
+	
+}
+header, .nav-principal{
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu,
+nav, section {
+display: block;
+}
+
+
+/* Je vais partir du principe suivant : SEUL le CONTENEUR 
+possédera une classe, et ses enfants(directs) en bénéficieront
+automatiquement, SANS avoir à les nommer spécifiquement.
+.containerFlex{
+	/* ici les styles du CONTENEUR */
+/*}
+.containerFlex >*{
+	/* ici les styles des enfants */
+/*}
+
+  
+ 				/* MOBILE FIRST */
+/* En vue MOBILE les elmts sont positionnés
+ les uns en DESSOUS des autres */
+
+ /* je vais préciser le display du container */
+ [class*="container-"]{
+ 	display: flex;
+ 	flex-direction: column;
+ }
+ /*flex items*/
+ /* pour aérer les élmts qui sont collés 
+ je vais utiliser des marges */
+
+[class*="container-"] > * {
+	margin-bottom: 1rem;
+	flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(100% - 1rem - 0.1px);
+}
+
+[class*="container-1"] > * {
+	flex-basis: calc(100% );
+}
+
+[class*="container-2"] > * {
+	flex-basis: calc(100% / 2 - 1rem - 0.1px);
+}
+.dis-none{
+    display: none;
+}
+
+
+
+/*definition du containeur flex 12 positions*/
+            .container-12 {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-left: -1rem;
+            }
+
+  /*definition caractéristiques enfants flex item*/
+            .container-12 > * {
+                
+                flex-basis: calc(100% / 12 - 1rem);
+                margin-left: 1rem;
+            }
+          
+
+.nav-menu{
+	display: flex;
+	flex-direction: row;
+}
+
+
+
+
+
+
+/* je vais maintenant mettre mes médiaqueries */
+
+/* vue TABLETTE */
+@media screen and (min-width: 570px){
+	
+		[class*="container-"] {
+		/* container flex */
+		display: flex;
+		/* en ligne */
+		flex-direction: row;
+		/* autoriser le passage à la ligne */
+		flex-wrap: wrap;
+		/* appliquer un margin-left de VALEUR NEGATIVE 
+		sur le conteneur ce qui aura pour effet d'absorber 
+		le margin du premier enfant */
+		/*margin-left: -1rem; */
+
+
+		}
+		/* espaces latéraux entre les éléments */
+		[class*="container-"] > * {
+			margin-left: -1rem;
+		}
+		.container-1 > * {
+			margin-left: -1rem;
+		}
+
+		/* nous allons modifier la valeur du flex-basis pour les enfants */
+		.container-md-1 > * {
+			flex: 1 1 calc(100% - 1rem);
+		}
+		.container-md-2 > * {
+			flex: 1 1 calc(100% / 2 - 1rem);
+		}
+		.container-md-3 > *{
+		
+			flex: 1 1 calc(100% / 3 - 1rem);
+		}
+		.container-md-4 > *{
+			flex: 1 1 calc(100% / 4 - 1rem);
+		}
+		.container-md-6 > *{
+			flex: 1 1 calc(100% / 6 - 1rem);
+		}
+		.container-md-8 > *{
+			flex: 1 1 calc(100% / 8 - 1rem);
+		}
+		.container-md-8> .md-item-double{
+		
+		flex: 1 1 calc(100% * 2 / 8 - 1rem);
+		}
+		.container-md-6 > .md-item-double{
+		
+		flex: 1 1 calc(100% * 2 / 6 - 1rem);
+		}	
+		.container-md-12 > *{
+			flex: 1 1 calc(100%  / 12 - 1rem);
+		}
+		.container-md-12 > .md-item-double{
+			flex: 1 1 calc(100% * 2 / 12 - 1rem);
+		}
+		.container-md-12 > .md-item-triple{
+			flex: 1 1 calc(100% * 3 / 12 - 1rem);
+		}
+		.container-md-12 > .md-item-quadruple{
+			flex: 1 1 calc(100% * 4 / 12 - 1rem);
+		}
+		.container-md-12 > .md-item-quintuple{
+			flex: 1 1 calc(100% * 5 / 12 - 1rem);
+		}
+		.container-md-12 > .md-item-sextuple{
+			flex: 1 1 calc(100% * 6 / 12 - 1rem);
+		}
+		.container-md-12 > .md-item-septuple{
+			flex: 1 1 calc(100% * 7 / 12 - 1rem);
+		}
+		.container-md-12 > .md-item-septuple{
+			flex: 1 1 calc(100% * 8 / 12 - 1rem);
+		}
+		.container-md-12 > .md-item-septuple{
+			flex: 1 1 calc(100% * 9 / 12 - 1rem);
+		}
+		.container-md-12 > .md-item-septuple{
+			flex: 1 1 calc(100% * 10 / 12 - 1rem);
+		}
+		.container-md-12 > .md-item-septuple{
+			flex: 1 1 calc(100% * 11 / 12 - 1rem);
+		}
+
+
+		form{
+			background-color: red;
+		}
+	
+		.content{
+			
+			background-color: yellow;
+		}
+		
+ 	.push{
+		margin-left: auto;
+	}
+	.pull{
+		margin-right: auto;
+	}
+        
+
+}
+/* nous allons passer à la vue bureau */
+/* => lg sera utilisé pour la vue bureau : 
+par exemple container-lg-12 */
+
+@media screen and (min-width: 1024px){
+	
+	
+	
+	.container-lg-12 > .lg-item-double{
+		
+		flex: 1 1 calc(100% * 2 / 12 - 1rem);
+
+	}
+	
+
+	
+	.container-lg-3 > .lg-item-double{
+		flex: 1 1 calc(100% * 2 / 3 - 1rem);
+	}
+	
+	
+
+    /* nous allons modifier la valeur du flex-basis pour les enfants */
+		.container-lg-1 > * {
+			flex: 1 1 calc(100% - 1rem);
+		}
+		.container-lg-2 > * {
+			flex: 1 1 calc(100% / 2 - 1rem);
+		}
+		.container-lg-3 > *{
+		
+			flex: 1 1 calc(100% / 3 - 1rem);
+		}
+		.container-lg-3 > .lg-item-simple{
+		
+			flex: 1 1 calc(100% * 1 / 3 - 1rem);
+		}
+
+		.container-lg-4 > *{
+			flex: 1 1 calc(100% / 4 - 1rem);
+		}
+		.container-lg-4 > .lg-item-simple{
+			flex: 1 1 calc(100% * 1 / 4 - 1rem);
+		}
+
+		.container-lg-4 > .lg-item-triple{
+			flex: 1 1 calc(100% * 3 / 4 - 1rem);
+		}
+		.container-lg-6 > *{
+			flex: 1 1 calc(100% / 6 - 1rem);
+
+		}
+
+		.container-lg-6 > .lg-item-double{
+		
+		flex: 1 1 calc(100% * 2 / 6 - 1rem);
+		}	
+		.container-lg-8 > *{
+			flex: 1 1 calc(100% / 8 - 1rem);
+		}
+		.container-lg-8 > .lg-item-double{
+		
+			flex: 1 1 calc(100% * 2 / 8 - 1rem);
+		}
+		.container-lg-9 > .lg-item-triple{
+			flex: 1 1 calc(100% * 3 / 9 - 1rem);
+		}
+		
+		.container-lg-12 > *{
+			flex: 1 1 calc(100% * 1 / 12 - 1rem);
+		}
+		.container-lg-12 > .lg-item-simple{
+			flex: 1 1 calc(100% * 1 / 12 - 1rem);
+		}
+		.container-lg-12 > .lg-item-double{
+			flex: 1 1 calc(100% * 2 / 12 - 1rem);
+		}
+		.container-lg-12 > .lg-item-triple{
+			flex: 1 1 calc(100% * 3 / 12 - 1rem);
+		}
+		.container-lg-12 > .lg-item-quadruple{
+			flex: 1 1 calc(100% * 4 / 12 - 1rem);
+		}
+		.container-lg-12 > .lg-item-quintuple{
+			flex: 1 1 calc(100% * 5 / 12 - 1rem);
+		}
+		.container-lg-12 > .lg-item-sextuple{
+			flex: 1 1 calc(100% * 6 / 12 - 1rem);
+		}
+		.container-lg-12 > .lg-item-septuple{
+			flex: 1 1 calc(100% * 7 / 12 - 1rem);
+		}
+		.container-lg-12 > .lg-item-octuple{
+			flex: 1 1 calc(100% * 8 / 12 - 1rem);
+		}
+		.container-lg-12 > .lg-item-nonuple{
+			flex: 1 1 calc(100% * 9 / 12 - 1rem);
+		}
+		.container-lg-12 > .lg-item-decuple{
+			flex: 1 1 calc(100% * 10 / 12 - 1rem);
+		}
+		.container-lg-12 > .lg-item-undecuple{
+			flex: 1 1 calc(100% * 11 / 12 - 1rem);
+		}
+
+
+}

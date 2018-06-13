@@ -1,0 +1,308 @@
+html {
+	/* pour éviter des calculs, je passe en taille relative 
+	ici en 62.5 % 1 rem= 10px */
+    font-size: 62.5%;
+}
+/* pour calculer plus facilement 
+les modèles de boite j utilise un box-sizing */
+*{
+    box-sizing: border-box;
+}
+body{
+    color: #552a20;
+    background-color: #ddeeaa;
+   
+     
+    font-family: "trebuchet MS", 
+    helvetica, Arial, sans-serif;
+    font-size: 1.4rem;
+    margin: 0px;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Open Sans', "trebuchet MS", 
+    helvetica, Arial, sans-serif; 
+}
+/* pour le référencement il est utile d'avoir un h1 
+avec du texte ici le nom de la société */
+h1{
+	margin: 0;
+}
+h1>span{
+	display: none;
+}
+
+h3{
+	color: #aad5df;
+	font-size: 2rem;
+	background-color: inherit;
+}
+
+p{
+	color: black;
+	background-color: inherit;
+}
+
+.header{
+	background-color: rgb(150,131,236);
+}
+
+
+
+/*styles généraux */
+
+.logo img, #info-logo, .form {
+    display: inline-block;
+}
+.nav-menu{
+	display: none;
+}
+
+.ariane{
+	background-color: #aad5df; /* bleu clair */
+	text-transform: uppercase;
+	list-style-type: none;
+	display: flex;
+	padding:1rem 0;
+
+
+}
+.ariane a{
+	text-decoration: none;
+	color: #552a20;
+
+}
+.ariane:nth-child(1){
+	color: white;
+}
+
+
+
+.rubriques-articles ul{
+	list-style-type: none;
+	/*padding-right: 2rem;*/
+	padding-left: 0;
+
+}
+
+.rubriques-articles ul ul{
+	display: none;
+
+}
+.rubriques-articles> ul > li > a{
+	border-bottom: 2px solid #aad5df;
+	text-transform: uppercase;
+	display: block;
+	padding-left: 1rem;
+	
+
+}
+.rubriques-articles a{
+	text-decoration: none;
+	color: inherit;
+	
+}
+.rubriques-articles a:hover{
+	background-color: #aad5df;
+}
+
+/* vue mobile First */
+.headPrincipal{
+	align-items: center;
+}
+.prix{
+	text-align: right;
+	color: white;
+	background-color: #aad5df;
+	margin-bottom: 1rem;
+	position: absolute;
+	left: 1rem;
+	right: 2rem;
+	bottom: 5px;
+
+}
+
+
+article{
+	padding: 0 1rem;
+	border: 1px solid #aad5df;
+	margin-bottom: 1rem;
+	position: relative;
+}
+article a{
+	text-decoration: none;
+}
+.article-titre{
+	color: #aad5df; /* bleu clair */
+}
+.article-text{
+	color: #552a20; /* brun/noir foncé */
+}
+/* en vue mobile certains éléments sont CACHES */
+.menu, .img{
+	display: none;
+}
+
+
+/* page détail */
+/*------------------------------------------*/
+
+/* vue mobile First */
+	.big-detail{
+		display:none;
+	}
+	.prix-detail{
+		text-align: left;
+		color: white;
+		background-color: #aad5df;
+		padding: 0.7rem 0 0.7rem 0.5rem;
+		margin-bottom: 2rem;
+		
+	}
+
+	.contenu-detail{
+		padding: 0 1rem;
+	}
+
+	#petite-majuscule{
+		font-variant: small-caps;
+		font-weight: bolder;
+		font-size: 1.7rem;
+		margin-bottom: 0.2rem;
+	}
+
+
+
+/* vue tablette */
+@media screen and (min-width: 570px){
+	
+	
+
+	.form{
+		text-align: right;
+	}
+	.contenu{
+		width: 90%;
+		margin: 0 auto;
+	}
+	
+	.nav-menu{
+		list-style-type: none;
+		display: flex;
+		justify-content: space-between;
+		padding-left: 0;
+		margin-left: 0;
+		text-transform: uppercase;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+	.nav-menu li{
+		flex: 1 1 calc(100%  / 5);
+		border-bottom: 2px solid transparent;
+
+	}
+	.nav-menu li:hover{
+ 		border-bottom: 2px solid #552a20;
+	}	
+	.nav-menu h2{
+		margin-bottom: 0;
+		margin-top: 0;
+		text-align: center;
+		font-size: 1.3rem;
+	}		
+	
+	.nav-menu a{
+		font-size: 1.3rem;
+		text-decoration:none;
+		color: #552a20; /* brun/noir foncé */;
+		display: block;
+		padding: 1rem 0;
+
+	}
+	.menu{
+		display: flex;
+	}
+	.rubriques-articles{
+		    padding-right: 3rem;
+	}
+	.rubriques-articles ul ul{
+	    display: block;
+	    padding-left: 2rem;
+	
+	}
+	.article{
+		padding-bottom: 2rem;
+	}
+	.article .prix{
+		visibility: hidden; 
+		width: 10%;
+		transition: all 2s linear;
+
+	}
+	.article:hover .prix{
+		visibility: visible;
+		width: 95%;
+		transition: all 2s linear;
+	}
+
+	.img{
+		display: block;
+		-webkit-margin-before: 1em;
+    	-webkit-margin-after: 1em;
+    	-webkit-margin-start: 0px;
+    	-webkit-margin-end: 0px;	
+	}
+
+	/* page détail */
+/*------------------------------------------*/
+	/* vue tablette */
+	.big-detail{
+		display:block;
+	}
+
+	/* page contact */
+/*------------------------------------------*/
+	/* vue tablette */	
+	.plan iframe{
+		height:95%;
+	} 
+	.renseignement div:first-child p{
+		text-align: right;
+		padding-right: 2rem;
+	}
+
+}
+/* a ajouter dans la vue bureau   */
+/* -------------------------------*/
+
+@media screen and (min-width: 1024px){
+	
+	/* page detail */
+	.prix-detail{
+		max-width: 50%;
+	}
+	
+
+}
+
+
+
+
+
+
+/* A SUPPRIMER AVANT DE RENDRE LE PROJET vision des zones */
+/* -----------------------------------------------*/
+.blue{background-color: #20bffa; }
+.blueFonce{ background-color: #00aeef;}
+.vert{background-color:rgb(122, 184, 0); }
+.jaune{background-color: rgb(255, 177, 65); }
+.gris{background-color: rgb(85, 85, 85);  }
+.blanc{background-color: #FFF;  }
+.personal-info li{background-color: #20bffa; }
+
+main > * {
+                background-color:rgba(122, 184, 0, 0.5);
+                color: inherit;
+              
+}
+/* ----------------------------------*/
